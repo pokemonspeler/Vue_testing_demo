@@ -1,0 +1,8 @@
+on: [ workflow_call ]
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      # setup
+      - uses: actions/checkout@v3

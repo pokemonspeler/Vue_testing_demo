@@ -12,8 +12,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: 'npm'
-      - run: yarn install --frozen-lockfile --non-interactive
+      - run: npm ci --no-fund
       - name: Run test
         run: ./node_modules/.bin/vitest run --coverage --reporter=junit --outputFile=test-report.xml
       - name: Publish Test Report

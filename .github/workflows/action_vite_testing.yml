@@ -12,8 +12,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-      - run: npm ci --no-fund
+      - name: NPM install
+        run: npm ci --no-fund
       - name: Run test
+        run: ./node_modules/.bin/vitest run
+      - name: Run test coverage
         run: ./node_modules/.bin/vitest run --coverage --reporter=junit --outputFile=test-report.xml
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v3

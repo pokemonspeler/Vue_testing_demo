@@ -219,4 +219,3 @@ $RECYCLE.BIN/
 ### Testing
 conerage/
 test-report.xml
-test/__snapshots__/

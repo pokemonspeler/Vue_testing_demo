@@ -3,7 +3,7 @@ name: Vite on Pull Request
 on:
   pull_request:
     paths:
-      - .github/workflows/vite_on_release.yml
+      - .github/workflows/**
       - components/**
       - test/**
       - package.json
@@ -19,6 +19,7 @@ jobs:
 
   sonar:
     uses: ./.github/workflows/action_sonarcloud.yml
+    needs: [ testing ]
     secrets:
       github: ${{ secrets.GITHUB_TOKEN }}
       sonar: ${{ secrets.SONAR_TOKEN }}

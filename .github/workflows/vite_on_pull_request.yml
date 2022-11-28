@@ -16,3 +16,9 @@ jobs:
 
   linting:
     uses: ./.github/workflows/action_vite_linting.yml
+
+  sonar:
+    uses: ./.github/workflows/action_sonarcloud.yml
+    secrets:
+      github: ${{ secrets.GITHUB_TOKEN }}
+      sonar: ${{ secrets.SONAR_TOKEN }}

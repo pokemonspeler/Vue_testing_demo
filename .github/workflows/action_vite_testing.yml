@@ -25,14 +25,14 @@ jobs:
           report_paths: 'test-report.xml'
       - uses: actions/upload-artifact@v2
         with:
-          name: vite-testing-report
+          name: junit-testing-report
           path: ./test-report.xml
+          retention-days: 14
       - uses: actions/upload-artifact@v2
         with:
           name: lcov-testing-report
-          path: ./coverage/lcov.info
-      - uses: actions/upload-artifact@v2
-        with:
-          name: coverage-report
-          path: ./coverage/lcov
+          path: |
+            ./coverage/lcov.info
+            ./coverage/lcov-report
+          retention-days: 14
 
